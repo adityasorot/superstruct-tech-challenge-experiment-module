@@ -13,8 +13,8 @@ function App() {
   };
   return (
     <Box>
-      {experimentModules.map(() => (
-        <ExperimentModule />
+      {experimentModules.map((_, index) => (
+        <ExperimentModule key={index} />
       ))}
       <Box
         sx={{

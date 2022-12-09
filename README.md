@@ -1,3 +1,8 @@
+## Installation
+
+Use 'yarn install' to download modules
+After that use 'yarn start' to start development
+
 ## The Challenge
 
 Using the following wireframes, build an experiment module interface. Using your comprehension about how the application functions, construct all applicable tests.

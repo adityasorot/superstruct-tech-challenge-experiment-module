@@ -58,6 +58,7 @@ const ExperimentModuleCollapse = ({
           iteration={iteration}
           index={index + 1}
           modifyIterationTitle={modifyIterationTitle}
+          key={index}
         />
       ))}
       <Collapse in={addIterationState} unmountOnExit>
