@@ -1,7 +1,6 @@
 // import logo from "./logo.svg";
 import { Box, Button } from "@mui/material";
 import { useState } from "react";
-import "./App.css";
 import ExperimentModule from "./components/ExperimentModule";
 
 function App() {

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders active color false 1`] = `
+<div
+  activeColor={false}
+  className="MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-1jgvcc3-MuiChip-root"
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+>
+  <span
+    className="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+  >
+    VERY VERY VERY LONG (UP TO 35 CHAR)
+  </span>
+</div>
+`;
+
+exports[`renders active color true 1`] = `
+<div
+  activeColor={true}
+  className="MuiChip-root MuiChip-outlined MuiChip-sizeMedium MuiChip-colorDefault MuiChip-outlinedDefault css-i2nbn3-MuiChip-root"
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+>
+  <span
+    className="MuiChip-label MuiChip-labelMedium css-6od3lo-MuiChip-label"
+  >
+    VERY VERY VERY LONG (UP TO 35 CHAR)
+  </span>
+</div>
+`;

@@ -1,28 +1,13 @@
-import {
-  Box,
-  Button,
-  ButtonGroup,
-  Collapse,
-  IconButton,
-  Paper,
-  Typography,
-} from "@mui/material";
-import React, { useEffect, useState } from "react";
+import { Box, Collapse, IconButton, Paper, Typography } from "@mui/material";
+import React, { useState } from "react";
 import LockIcon from "@mui/icons-material/Lock";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
-import IterationTile from "./IterationTile";
-import AddIcon from "@mui/icons-material/Add";
-import IterationAdd from "./IterationAdd";
+import ExperimentModuleCollapse from "./ExperimentModuleCollapse";
 const ExperimentModule = () => {
   const [iterationData, setIterationData] = useState([]);
   const [moduleLockState, setModuleLockState] = useState(false);
   const [moduleOpenState, setModuleOpenState] = useState(true);
-  const [addIterationState, setAddIterationState] = useState(true);
-  const [iterationTitle, setIterationTitle] = useState("");
-  const handleTitle = (e) => {
-    if (e.target.value.length > 35) return;
-    setIterationTitle(e.target.value);
-  };
+
   const lockButtonHandler = (e) => {
     setModuleLockState(!moduleLockState);
     setModuleOpenState(false);
@@ -31,34 +16,7 @@ const ExperimentModule = () => {
   const mainButtonHandler = () => {
     if (!moduleLockState) setModuleOpenState(!moduleOpenState);
   };
-  const resetIteration = () => {
-    setIterationData([]);
-  };
-  const addIterationStateHandler = () => {
-    setAddIterationState(!addIterationState);
-  };
-  const addIteration = () => {
-    const iteration = {
-      title: iterationTitle,
-    };
-    setIterationData([...iterationData, iteration]);
-    setIterationTitle("");
-    setAddIterationState(false);
-  };
-  const cancelIteration = () => {
-    if (iterationData.length == 0) return;
-    setIterationTitle("");
-    setAddIterationState(false);
-  };
-  const modifyIterationTitle = (index, newTitle) => {
-    iterationData[index] = {
-      title: newTitle,
-    };
-    setIterationData([...iterationData]);
-  };
-  useEffect(() => {
-    if (iterationData.length == 0) setAddIterationState(true);
-  }, [iterationData]);
+
   return (
     <Paper
       sx={{
@@ -94,55 +52,11 @@ const ExperimentModule = () => {
         )}
       </Box>
       <Collapse in={moduleOpenState} unmountOnExit>
-        <>
-          {iterationData.map((iteration, index) => (
-            <IterationTile
-              iteration={iteration}
-              index={index + 1}
-              modifyIterationTitle={modifyIterationTitle}
-            />
-          ))}
-          <Collapse in={addIterationState} unmountOnExit>
-            <IterationAdd
-              index={iterationData.length + 1}
-              iterationTitle={iterationTitle}
-              handleTitle={handleTitle}
-            />
-          </Collapse>
-          <Collapse in={!addIterationState} unmountOnExit>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row-reverse",
-                paddingTop: 1,
-              }}
-            >
-              <Button
-                sx={{ color: "white" }}
-                startIcon={<AddIcon />}
-                onClick={addIterationStateHandler}
-              >
-                Add Iteration
-              </Button>
-              <Button onClick={resetIteration}>Reset</Button>
-              <Button onClick={lockButtonHandler}>Lock</Button>
-            </Box>
-          </Collapse>
-          <Collapse in={addIterationState} unmountOnExit>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row-reverse",
-                paddingTop: 1,
-              }}
-            >
-              <Button onClick={addIteration} sx={{ color: "white" }}>
-                Done
-              </Button>
-              <Button onClick={cancelIteration}>Cancel</Button>
-            </Box>
-          </Collapse>
-        </>
+        <ExperimentModuleCollapse
+          iterationData={iterationData}
+          setIterationData={setIterationData}
+          lockButtonHandler={lockButtonHandler}
+        />
       </Collapse>
     </Paper>
   );

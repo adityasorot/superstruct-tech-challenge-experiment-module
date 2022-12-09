@@ -1,6 +1,6 @@
 import { InputBase, Paper, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React from "react";
 
 const IterationAdd = ({ index, handleTitle, iterationTitle }) => {
   return (
@@ -16,11 +16,10 @@ const IterationAdd = ({ index, handleTitle, iterationTitle }) => {
           borderRadius: 3,
         }}
         elevation={3}
-        //   onClick={mainButtonHandler}
       >
         <Box sx={{ display: "flex", flexDirection: "row" }}>
           <Typography
-            sx={{ color: "#757575", width: { xs: "20%", sm: "10%" } }}
+            sx={{ color: "#757575", width: { xs: "20%", sm: "10%", md: 100 } }}
           >
             EM-{index}
           </Typography>
@@ -43,7 +42,6 @@ const IterationAdd = ({ index, handleTitle, iterationTitle }) => {
           borderRadius: 3,
         }}
         elevation={3}
-        //   onClick={mainButtonHandler}
       >
         <Typography sx={{ color: "#757575", width: "10%" }} display="inline">
           To add a new iteration, start typing a prompt, or{" "}
