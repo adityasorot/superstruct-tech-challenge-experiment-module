@@ -1,6 +1,7 @@
 ## Installation
 
-Use 'yarn install' to download modules
+Use 'yarn install' to download modules.
+
 After that use 'yarn start' to start development
 
 ## The Challenge
