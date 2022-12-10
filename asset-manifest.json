@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.fb35d48d.css",
-    "main.js": "/static/js/main.e6c6bb36.js",
-    "index.html": "/index.html",
-    "main.fb35d48d.css.map": "/static/css/main.fb35d48d.css.map",
-    "main.e6c6bb36.js.map": "/static/js/main.e6c6bb36.js.map"
+    "main.css": "/superstruct-tech-challenge-experiment-module/static/css/main.fb35d48d.css",
+    "main.js": "/superstruct-tech-challenge-experiment-module/static/js/main.e6c6bb36.js",
+    "index.html": "/superstruct-tech-challenge-experiment-module/index.html",
+    "main.fb35d48d.css.map": "/superstruct-tech-challenge-experiment-module/static/css/main.fb35d48d.css.map",
+    "main.e6c6bb36.js.map": "/superstruct-tech-challenge-experiment-module/static/js/main.e6c6bb36.js.map"
   },
   "entrypoints": [
     "static/css/main.fb35d48d.css",
