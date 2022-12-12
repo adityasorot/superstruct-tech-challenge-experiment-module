@@ -8,16 +8,15 @@ const IterationTileRead = ({ iterationTitleHandler, iteration, index }) => {
       sx={{ display: "flex", flexDirection: "row" }}
       onClick={iterationTitleHandler}
     >
-      <Typography
-        sx={{ color: "#757575", width: { xs: "20%", sm: "10%", md: 100 } }}
-      >
+      <Typography sx={{ color: "#757575", width: { xs: 70, md: 100 } }}>
         EM-{index}
       </Typography>
       <Typography
         sx={{
           color: "#757575",
-          width: { xs: "50%", sm: "80%" },
           wordWrap: "break-word",
+          flexGrow: { xs: 0, md: 1 },
+          width: { xs: 100, md: 100 },
         }}
       >
         {iteration.title}
@@ -25,13 +24,13 @@ const IterationTileRead = ({ iterationTitleHandler, iteration, index }) => {
       <Typography
         sx={{
           color: "#757575",
-          paddingRight: 1,
-          width: { xs: "22%", sm: "8%" },
+          px: 1,
+          width: { xs: 70, md: 70 },
         }}
       >
         Selection
       </Typography>
-      <FiberManualRecordIcon sx={{ color: "#03a53c" }} />
+      <FiberManualRecordIcon sx={{ color: "#03a53c", width: 18 }} />
     </Box>
   );
 };
